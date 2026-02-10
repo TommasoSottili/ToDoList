@@ -3,8 +3,11 @@
 //
 
 #include "Date.h"
+#include <stdexcept>
 
 Date::Date(int day, int month, int year) {
+    if (!check_date(day, month, year))
+        throw std::out_of_range("Data non valida");
     this->day = day;
     this->month = month;
     this->year = year;
@@ -23,14 +26,20 @@ int Date::getYear() const {
 }
 
 void Date::setDay(int d) {
+    if (!check_date(d, this->month, this->year))
+        throw std::out_of_range("Giorno non valido");
     this->day = d;
 }
 
 void Date::setMonth(int m) {
+    if (!check_date(this->day, m, this->year))
+        throw std::out_of_range("Mese non valido");
     this->month = m;
 }
 
 void Date::setYear(int y) {
+    if (!check_date(this->day, this->month, y))
+        throw std::out_of_range("Anno non valido");
     this->year = y;
 }
 
