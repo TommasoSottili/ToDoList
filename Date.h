@@ -13,6 +13,8 @@ private:
     int month;
     int year;
 
+bool is_leap_year(int year);
+
 public:
     Date(int day, int month, int year);
 

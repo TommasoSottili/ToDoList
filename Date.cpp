@@ -33,3 +33,7 @@ void Date::setMonth(int m) {
 void Date::setYear(int y) {
     this->year = y;
 }
+
+bool Date::is_leap_year(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
