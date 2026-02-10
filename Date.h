@@ -13,7 +13,9 @@ private:
     int month;
     int year;
 
-bool is_leap_year(int year);
+    bool is_leap_year(int year) const;
+
+    int count_days_in_month(int month, int year);
 
 public:
     Date(int day, int month, int year);

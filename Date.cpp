@@ -34,6 +34,20 @@ void Date::setYear(int y) {
     this->year = y;
 }
 
-bool Date::is_leap_year(int year) {
+bool Date::is_leap_year(int year) const {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+int Date::count_days_in_month(int month, int year) {
+    switch (month) {
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            if (is_leap_year(year))
+                return 29;
+        else
+            return 28;
+        default:
+            return 31;
+    }
 }
