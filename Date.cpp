@@ -51,3 +51,17 @@ int Date::count_days_in_month(int month, int year) {
             return 31;
     }
 }
+
+bool Date::check_date(int day, int month, int year) {
+    if (year<1900 || year>2100)
+        return false;
+    if (month<1 || month>12)
+        return false;
+    if (day<1 || day>count_days_in_month(month,year))
+        return false;
+    return true;
+}
+
+
+
+

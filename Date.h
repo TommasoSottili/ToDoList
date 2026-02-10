@@ -17,6 +17,8 @@ private:
 
     int count_days_in_month(int month, int year);
 
+    bool check_date(int day, int month, int year);
+
 public:
     Date(int day, int month, int year);
 
