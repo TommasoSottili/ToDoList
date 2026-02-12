@@ -16,7 +16,6 @@ public:
     ToDo(const Date &date, const std::string& description);
 
     void setDescription(const std::string& description);
-    void setDate(const Date &date);
     void setCompleted(bool completed);
     std::string getDescription() const;
 };
