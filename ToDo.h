@@ -20,7 +20,8 @@ public:
     std::string getDescription() const;
     bool isCompleted() const;
     void changeCompleted(bool completed);
-    std::string getDate() const;
+    std::string getDate() const; //trasformate data in stringa per poterla stampare
+    static Date getDateString(const std::string& dateString); //trasformare una stringa in una data da un file
 };
 
 
