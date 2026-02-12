@@ -30,7 +30,7 @@ void ToDo::changeCompleted(bool completed) {
 
 std::string ToDo::getDate() const {
     std::stringstream ss;
-    ss << date.getDay() << "/" << date.getMonth() << "/" << date.getYear() << "/";
+    ss << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
     return ss.str();
 }
 
