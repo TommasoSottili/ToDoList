@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(Test)
 set(SOURCE_FILES
         Date.cpp
-        Date.h)
+        Date.h
+        ToDo.h
+        ToDo.cpp)
 add_executable(ToDoList main.cpp)
 add_library(core ${SOURCE_FILES})
 target_link_libraries(ToDoList core)
