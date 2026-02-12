@@ -29,6 +29,8 @@ public:
     void setDay(int d);
     void setMonth(int m);
     void setYear(int y);
+
+    bool operator==(const Date &date) const;
 };
 
 
