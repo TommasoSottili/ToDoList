@@ -48,3 +48,9 @@ Date ToDo::getDateString(const std::string& dateString) {
     }
     return Date(parts[0], parts[1], parts[2]);
 }
+
+bool ToDo::operator==(const ToDo& todo) const {
+    if (this->date == todo.date && this->description == todo.description)
+        return true;
+    return false;
+}
