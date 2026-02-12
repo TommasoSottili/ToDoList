@@ -3,6 +3,7 @@
 //
 
 #include "ToDo.h"
+#include <sstream>
 
 ToDo::ToDo(const Date& date, const std::string& description):date(date), description(description),completed(false) {};
 
@@ -24,4 +25,10 @@ bool ToDo::isCompleted() const {
 
 void ToDo::changeCompleted(bool completed) {
     this->completed = !completed;
+}
+
+std::string ToDo::getDate() const {
+    std::stringstream ss;
+    ss << date.getDay() << "/" << date.getMonth() << "/" << date.getYear() << "/";
+    return ss.str();
 }

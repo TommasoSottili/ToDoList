@@ -20,6 +20,7 @@ public:
     std::string getDescription() const;
     bool isCompleted() const;
     void changeCompleted(bool completed);
+    std::string getDate() const;
 };
 
 
