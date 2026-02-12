@@ -17,3 +17,11 @@ void ToDo::setDescription(const std::string& description) {
 void ToDo::setCompleted(bool completed) {
     this->completed = completed;
 }
+
+bool ToDo::isCompleted() const {
+    return completed;
+}
+
+void ToDo::changeCompleted(bool completed) {
+    this->completed = !completed;
+}

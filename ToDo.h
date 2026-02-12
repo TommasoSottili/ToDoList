@@ -18,6 +18,8 @@ public:
     void setDescription(const std::string& description);
     void setCompleted(bool completed);
     std::string getDescription() const;
+    bool isCompleted() const;
+    void changeCompleted(bool completed);
 };
 
 
