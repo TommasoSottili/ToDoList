@@ -24,7 +24,7 @@ bool ToDo::isCompleted() const {
     return completed;
 }
 
-void ToDo::changeCompleted(bool completed) {
+void ToDo::changeCompleted() {
     this->completed = !completed;
 }
 
