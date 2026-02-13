@@ -116,7 +116,20 @@ int main() {
                     }
                     break;
                 }
-
+            case 6: {
+                    auto uncompleted = list.getUncompletedTodo();
+                    if (uncompleted.empty()) {
+                        cout << "Non hai ToDo in sospeso!" << endl;
+                    }
+                    else {
+                        cout << "\n*** DA COMPLETARE ***" << endl;
+                        for (const auto& it : uncompleted) {
+                            printToDo(it);
+                        }
+                    }
+                    cout << "\n*******************************************" << endl;
+                }
+            break;
         }
     }
 }
