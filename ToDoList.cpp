@@ -19,3 +19,12 @@ void ToDoList::removeToDo(const std::string& description) {
        return t.getDescription() == description;
    });//implementazione Lambda Expression
 }
+
+std::list<ToDo>::iterator ToDoList::findActivity(const std::string& description) {
+    for (auto it = activities_list.begin(); it != activities_list.end(); ++it)
+    {
+        if (it->getDescription() == description)
+            return it;
+    }
+    return activities_list.end();
+}
