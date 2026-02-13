@@ -126,10 +126,27 @@ int main() {
                         for (const auto& it : uncompleted) {
                             printToDo(it);
                         }
+                        cout << "\n*******************************************" << endl;
                     }
-                    cout << "\n*******************************************" << endl;
+                    break;
                 }
-            break;
+            case 7: {
+                    string name;
+                    cout << "Nome file per il salvataggio (invio per default '" << filename << "'): ";
+                    getline(cin, name);
+                    if (name.empty()) {
+                        name = filename;
+                    }
+                    try {
+                        list.saveToFile(name);
+                        cout << "Salvataggio riuscito in " << filename << endl;
+                    }
+                    catch (const std::exception& e) {
+                        cout << "Errore salvataggio: " << e.what() << endl;
+                    }
+                    break;
+                }
         }
+
     }
 }
