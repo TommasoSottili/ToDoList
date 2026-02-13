@@ -53,3 +53,29 @@ TEST_F(ToDoListTest, ChangeCompleted) {
     EXPECT_TRUE(fad);
 }
 
+TEST_F(ToDoListTest, ModifyTodo) {
+    list.modify("Compito A", "Compito A Mod");
+    bool fn = false;
+    for (const auto& item : list.getToDoList()) {
+        if (item.getDescription() == "Compito A Mod") {
+            fn = true;
+        }
+    }
+    EXPECT_TRUE(fn);
+    EXPECT_THROW(list.modify("Compito Inesistente", "Nuova Descrizione"),std::runtime_error);
+}
+
+TEST_F(ToDoListTest, SaveAndLoad) {
+    std::string filename = "test_db.txt";
+    list.addToDo(ToDo(Date(10,10,2024), "TaskDaSalvare"));
+    list.ToDoCompleted("TaskDaSalvare");
+    list.saveToFile(filename);
+    ToDoList newList("Nuova");
+    newList.loadFromFile(filename);
+    EXPECT_EQ(newList.totalToDoCount(), 4);
+    EXPECT_FALSE(newList.getToDoList().front().isCompleted());
+
+    std::remove(filename.c_str());
+}
+
+
