@@ -67,7 +67,18 @@ int main() {
                     }
             break;
             }
-
+            case 2: {
+                    try {
+                        string description;
+                        cout << "Inserisci la descrizione del ToDo da rimuovere: ";
+                        getline(cin, description);
+                        list.removeToDo(description);
+                    }
+                    catch (const std::exception& e) {
+                        cout << e.what() << endl;
+                    }
+                    break;
+                }
         }
     }
 }
