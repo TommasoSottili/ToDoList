@@ -14,6 +14,10 @@ private:
 public:
     explicit ToDoList(std::string name);//explicit per imperdire che il compilatore tratti una stringa come se fosse una ToDoList
     ToDoList() = default;
+
+    void addToDo(const ToDo& activity);
+    void removeToDo(const std::string& description);
+    void removeAllToDo();
 };
 
 
