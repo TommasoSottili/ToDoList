@@ -175,7 +175,13 @@ int main() {
                     }
                     break;
                 }
-
+            case 0: {
+                    cout << "Uscita dal programma." << endl;
+                    end = true;
+                    break;
+                }
+            default:
+            cout << "Scelta non valida, riprova." << endl;
         }
 
     }
