@@ -95,6 +95,14 @@ int main() {
                     }
                     break;
                 }
+            case 4: {
+                    string description;
+                    cout << "Inserisci la descrizione del ToDo di cui cambiare stato: ";
+                    getline(cin, description);
+                    list.ToDoCompleted(description);
+                    cout << "Stato modificato (se il ToDo esisteva)." << endl;
+                    break;
+                }
 
         }
     }
