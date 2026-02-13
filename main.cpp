@@ -103,6 +103,19 @@ int main() {
                     cout << "Stato modificato (se il ToDo esisteva)." << endl;
                     break;
                 }
+            case 5: {
+                    if (list.totalToDoCount() == 0) {
+                        cout << "La lista delle attività è vuota " << endl;
+                    }
+                    else {
+                        cout << "\n************* ELENCO COMPLETO *************" << endl;
+                        for (const auto& it : list.getToDoList()) {
+                            printToDo(it);
+                        }
+                        cout << "\n*******************************************" << endl;
+                    }
+                    break;
+                }
 
         }
     }
