@@ -28,3 +28,21 @@ std::list<ToDo>::iterator ToDoList::findActivity(const std::string& description)
     }
     return activities_list.end();
 }
+
+void ToDoList::ToDoCompleted(const std::string& description) {
+    auto it = findActivity(description);
+    if (it != activities_list.end()) {
+        it->changeCompleted();
+    }
+}
+
+void ToDoList::modify(const std::string& o, const std::string& n) {
+    auto it = findActivity(o);
+    if (it != activities_list.end()) {
+        it->setDescription(n);
+    }
+    else {
+        throw std::runtime_error("Attività '" + o + "' non trovata.");
+    }
+}
+

@@ -20,6 +20,8 @@ public:
     void removeToDo(const std::string& description);
     void removeAllToDo();
 
+    void ToDoCompleted(const std::string& description);
+    void modify(const std::string& o, const std::string& n);
 
 
 };
