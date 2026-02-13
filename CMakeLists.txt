@@ -7,7 +7,9 @@ set(SOURCE_FILES
         Date.cpp
         Date.h
         ToDo.h
-        ToDo.cpp)
+        ToDo.cpp
+        ToDoList.h
+        ToDoList.cpp)
 add_executable(ToDoList main.cpp)
 add_library(core ${SOURCE_FILES})
 target_link_libraries(ToDoList core)
