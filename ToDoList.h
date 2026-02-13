@@ -11,6 +11,9 @@ class ToDoList {
 private:
     std::string name;
     std::list<ToDo> activities_list;
+public:
+    explicit ToDoList(std::string name);//explicit per imperdire che il compilatore tratti una stringa come se fosse una ToDoList
+    ToDoList() = default;
 };
 
 

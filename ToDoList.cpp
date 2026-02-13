@@ -3,3 +3,5 @@
 //
 
 #include "ToDoList.h"
+
+ToDoList::ToDoList(std::string name): name(std::move(name)) {};
