@@ -61,4 +61,18 @@ int ToDoList::uncompletedToDoCount() const {
    });
 }
 
+const std::list<ToDo>& ToDoList::getToDoList() const{
+    return activities_list;
+}
+
+std::list<ToDo> ToDoList::getUncompletedTodo() const {
+    std::list<ToDo> uncompleted;
+    for (const auto& it : activities_list)
+    {
+        if (!it.isCompleted())
+            uncompleted.push_back(it);
+    }
+    return uncompleted;
+}
+
 

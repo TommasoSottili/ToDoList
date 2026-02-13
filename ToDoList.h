@@ -27,6 +27,9 @@ public:
 
     int totalToDoCount() const;
     int uncompletedToDoCount() const;
+
+    const std::list<ToDo>& getToDoList() const;
+    std::list<ToDo> getUncompletedTodo() const;
 };
 
 
