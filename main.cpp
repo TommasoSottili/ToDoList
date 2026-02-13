@@ -35,4 +35,39 @@ void showMenu() {
     cout << "Opzione n: ";
 }
 
+int main() {
+    ToDoList list("La mia ToDoList");
+    bool end = false;
+    int c;
+    std::string filename = "todo_list_data.txt";
+    list.loadFromFile(filename);
+    while (!end) {
+        showMenu();
+        if (!(cin >> c)) {
+            cout << "Imput non valido." << endl;
+        }
+        cleanInput();
+        switch (c) {
+            case 1: {
+                    try{
+                        string description;
+                        int day;
+                        int month;;
+                        int year;
+                        cout << "Inserisci descrizione: ";
+                        getline(cin, description);
+                        cout << "Inserisci data in formato gg mm aaaa: ";
+                        cin >> day >> month >> year;
+                        Date data(day, month, year);
+                        list.addToDo(ToDo(data,description));
+                        cout << "ToDo aggiunto correttamente" << endl;
+                    }
+                    catch (const std::exception& e) {
+                        cout << e.what() << endl;
+                    }
+            break;
+            }
 
+        }
+    }
+}
