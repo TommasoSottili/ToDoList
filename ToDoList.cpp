@@ -4,6 +4,10 @@
 
 #include "ToDoList.h"
 #include <algorithm>
+#include <utility>
+#include <fstream>
+#include <sstream>
+#include <vector>
 
 ToDoList::ToDoList(std::string name): name(std::move(name)) {};
 
@@ -75,4 +79,15 @@ std::list<ToDo> ToDoList::getUncompletedTodo() const {
     return uncompleted;
 }
 
+void ToDoList::saveToFile(const std::string& filename) const {
+    std::ofstream file(filename);
+    if (!file.is_open())
+        throw std::runtime_error("Errore nella scrittura sul file");
+    for (const auto& it : activities_list) {
+        file << it.getDescription() << "|"
+             << it.getDate() << "|"
+             << it.isCompleted() << "\n";
+    }
+    file.close();
+}
 

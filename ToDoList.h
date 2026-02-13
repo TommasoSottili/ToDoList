@@ -6,6 +6,8 @@
 #define TODOLIST_TODOLIST_H
 #include "ToDo.h"
 #include <list>
+#include <stdexcept>
+#include <fstream>
 
 class ToDoList {
 private:
@@ -30,6 +32,8 @@ public:
 
     const std::list<ToDo>& getToDoList() const;
     std::list<ToDo> getUncompletedTodo() const;
+
+    void saveToFile(const std::string& filename) const;
 };
 
 
