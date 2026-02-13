@@ -146,6 +146,22 @@ int main() {
                     }
                     break;
                 }
+            case 8: {
+                    string name;
+                    cout << "Nome file da caricare (invio per default '" << filename << "'): ";
+                    getline(cin, name);
+                    if (name.empty()) {
+                        name = filename;
+                    }
+                    try {
+                        list.loadFromFile(name);
+                        cout << "Caricamento riuscito. Totale ToDo: " << list.totalToDoCount() << endl;
+                    }
+                    catch (const std::exception& e) {
+                        cout << "Errore caricamento: " << e.what() << endl;
+                    }
+                    break;
+                }
         }
 
     }
