@@ -23,7 +23,10 @@ public:
     void ToDoCompleted(const std::string& description);
     void modify(const std::string& o, const std::string& n);
 
+    std::string getName() const;
 
+    int totalToDoCount() const;
+    int uncompletedToDoCount() const;
 };
 
 

@@ -3,6 +3,7 @@
 //
 
 #include "ToDoList.h"
+#include <algorithm>
 
 ToDoList::ToDoList(std::string name): name(std::move(name)) {};
 
@@ -45,4 +46,19 @@ void ToDoList::modify(const std::string& o, const std::string& n) {
         throw std::runtime_error("Attività '" + o + "' non trovata.");
     }
 }
+
+std::string ToDoList::getName() const {
+    return name;
+}
+
+int ToDoList::totalToDoCount() const {
+    return activities_list.size();
+}
+
+int ToDoList::uncompletedToDoCount() const {
+    return std::count_if(activities_list.begin(), activities_list.end(), [](const ToDo& t){
+       return !t.isCompleted();
+   });
+}
+
 
