@@ -91,3 +91,34 @@ void ToDoList::saveToFile(const std::string& filename) const {
     file.close();
 }
 
+void ToDoList::loadFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open())
+        return;
+    activities_list.clear();
+    std::string line;
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string item;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, item, '|')) {
+            tokens.push_back(item);
+        }
+        if (tokens.size() >= 3) {
+            try {
+                std::string description = tokens[0];
+                std::string dateStr = tokens[1];
+                bool completed = (tokens[2] == "1");
+                Date date = ToDo::getDateString(dateStr);
+                ToDo todo(date,description);
+                if (completed) {
+                    todo.setCompleted(true);
+                }
+                activities_list.push_back(todo);
+            }
+            catch (...) {}
+        }
+    }
+    file.close();
+}
+

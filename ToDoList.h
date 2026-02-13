@@ -34,6 +34,7 @@ public:
     std::list<ToDo> getUncompletedTodo() const;
 
     void saveToFile(const std::string& filename) const;
+    void loadFromFile(const std::string& filename);
 };
 
 
