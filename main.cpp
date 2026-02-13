@@ -162,6 +162,20 @@ int main() {
                     }
                     break;
                 }
+            case 9: {
+                    char confirm;
+                    cout << "Sei sicuro di voler cancellare TUTTO? (s/n): ";
+                    cin >> confirm;
+                    if (confirm == 's' || confirm == 'S') {
+                        list.removeAllToDo();
+                        cout << "Lista svuotata." << endl;
+                    }
+                    else {
+                        cout << "Operazione annullata." << endl;
+                    }
+                    break;
+                }
+
         }
 
     }
