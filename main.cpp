@@ -79,6 +79,23 @@ int main() {
                     }
                     break;
                 }
+            case 3: {
+                    string oldDesc;
+                    string newDesc;
+                    cout << "Inserisci la descrizione del ToDo da modifcare: ";
+                    getline(cin, oldDesc);
+                    cout << "Inserisci la nuova descrizione: ";
+                    getline(cin, newDesc);
+                    try {
+                        list.modify(oldDesc,newDesc);
+                        cout << "Modifica effettuata correttamente." << endl;
+                    }
+                    catch (const std::exception& e) {
+                        cout << e.what() << endl;
+                    }
+                    break;
+                }
+
         }
     }
 }
